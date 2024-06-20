@@ -15,7 +15,7 @@ def remove_duplicate_employees(employees: list):
     return unique_employees_details
 
 
-def get_gamad_anak(employees: list):
+def get_gamad_anak(employees: list, shared_list=None):
     random.shuffle(employees)
     list_of_pairs: list = []
     for index, employee in enumerate(employees):
@@ -26,4 +26,8 @@ def get_gamad_anak(employees: list):
 
         list_of_pairs.append(pair)
 
-    print(list_of_pairs)
+    if shared_list is not None:
+        shared_list.append(list_of_pairs)
+
+    return list_of_pairs
+
